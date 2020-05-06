@@ -1,5 +1,7 @@
 # Piezas
 [![Build Status](https://travis-ci.org/jdmacam/Piezas.svg?branch=master)](https://travis-ci.org/jdmacam/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/jdmacam/Piezas/badge.svg?branch=master)](https://coveralls.io/github/jdmacam/Piezas?branch=master)
+
 
 ## Associated Enumerated Types
 `Piece` has four possible values: `X`,`O`,`Invalid`, and `Blank`
