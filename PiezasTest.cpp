@@ -24,7 +24,7 @@ TEST(PiezasTest, constructor_test)
   Piezas obj;
   for(int i = 0; i < BOARD_COLS; i++){
     for(int j = 0; j < BOARD_COLS; j++){
-      ASSERT_TRUE(obj[i][j] == Blank);
+      ASSERT_TRUE(obj.board[i][j] == Blank);
     }
   }
 
