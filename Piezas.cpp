@@ -34,6 +34,9 @@ Piezas::Piezas()
       board[i][j] = Blank;
     }
   }
+
+  //set X as first turn
+  turn = X;
 }
 
 /**

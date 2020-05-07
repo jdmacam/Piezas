@@ -34,3 +34,9 @@ TEST(PiezasTest, constructor_all_spaces)
     }
   }
 }
+
+TEST(PiezasTest, constructor_first_turn)
+{
+	Piezas obj;
+	ASSER_TRUE(turn == X);
+}
