@@ -101,3 +101,24 @@ TEST(PiezasTest, reset_test)
 	ASSERT_TRUE(obj.pieceAt(1,1) == Blank);
 	ASSERT_TRUE(obj.pieceAt(2,1) == Blank);
 }
+
+TEST(PiezasTest, full_column)
+{
+	Piezas obj;
+	obj.dropPiece(0);
+	obj.dropPiece(0);
+	obj.dropPiece(0);
+	ASSERT_TRUE(obj.dropPiece(0) == Blank);
+}
+
+TEST(PiezasTest, out_of_upper_bounds)
+{
+	Piezas obj;
+	ASSERT_TRUE(obj.dropPiece(BOARD_COLS) == Invalid);
+}
+
+TEST(PiezasTest, out_of_lower_bounds)
+{
+	Piezas obj;
+	ASSERT_TRUE(obj.dropPiece(-1) == Invalid);
+}
