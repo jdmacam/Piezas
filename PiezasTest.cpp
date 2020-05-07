@@ -39,5 +39,5 @@ TEST(PiezasTest, drop_1_column)
 {
 	Piezas obj;
 	obj.dropPiece(0);
-	ASSERT_TRUE(pieceAt(0,0) == X);
+	ASSERT_TRUE(obj.pieceAt(0,0) == X);
 }
