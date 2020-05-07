@@ -172,6 +172,9 @@ Piece Piezas::gameState()
     //horizontal X tally
     cur = 0;
     for(int i = 0; i < BOARD_ROWS; i++){
+        if(cur > x_hori){
+            x_hori = cur;
+        }
         cur = 0;
         for(int j = 0; j < BOARD_COLS; j++){
             if(board[i][j] == X){
@@ -189,6 +192,9 @@ Piece Piezas::gameState()
     //horizontal O tally
     cur = 0;
     for(int i = 0; i < BOARD_ROWS; i++){
+        if(cur > o_hori){
+            o_hori = cur;
+        }
         cur = 0;
         for(int j = 0; j < BOARD_COLS; j++){
             if(board[i][j] == O){
