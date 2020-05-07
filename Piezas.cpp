@@ -147,8 +147,8 @@ Piece Piezas::gameState()
             else{
                 if(cur > x_vert){
                     x_vert = cur;
-                    cur = 0;
                 }
+                cur = 0;
             }
         }
     }
@@ -163,8 +163,8 @@ Piece Piezas::gameState()
             else{
                 if(cur > o_vert){
                     o_vert = cur;
-                    cur = 0;
                 }
+                cur = 0;
             }
         }
     }
@@ -172,6 +172,7 @@ Piece Piezas::gameState()
     //horizontal X tally
     cur = 0;
     for(int i = 0; i < BOARD_ROWS; i++){
+        cur = 0;
         for(int j = 0; j < BOARD_COLS; j++){
             if(board[i][j] == X){
                 cur++;
@@ -179,8 +180,8 @@ Piece Piezas::gameState()
             else{
                 if(cur > x_hori){
                     x_hori = cur;
-                    cur = 0;
                 }
+                cur = 0;
             }
         }
     }
@@ -188,6 +189,7 @@ Piece Piezas::gameState()
     //horizontal O tally
     cur = 0;
     for(int i = 0; i < BOARD_ROWS; i++){
+        cur = 0;
         for(int j = 0; j < BOARD_COLS; j++){
             if(board[i][j] == O){
                 cur++;
@@ -195,8 +197,8 @@ Piece Piezas::gameState()
             else{
                 if(cur > o_hori){
                     o_hori = cur;
-                    cur = 0;
                 }
+                cur = 0;
             }
         }
     }
