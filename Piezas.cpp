@@ -63,7 +63,32 @@ void Piezas::reset()
 **/
 Piece Piezas::dropPiece(int column)
 {
-    return Blank;
+    Piece dropped = turn;
+    //check if valid column
+    if(column >= BOARD_COLS || column < 0){
+      return Invalid;
+    }
+
+    //check if column is full
+    if(pieceAt(2,column) != Blank){ //a piece is at top row
+      return Blank;
+    }
+
+    //find appropriate spot in column, place piece
+    for(int i = 0; i < BOARD_ROWS; i++){
+      if(pieceAt(i,column) == Blank){
+        board[i][column] == turn;
+        break;
+      }
+    }
+
+    if(turn == X){
+        turn = O;
+    }
+    else{
+        turn = X;
+    }
+    return dropped;
 }
 
 /**

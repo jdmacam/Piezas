@@ -35,8 +35,9 @@ TEST(PiezasTest, constructor_all_spaces)
   }
 }
 
-TEST(PiezasTest, constructor_first_turn)
+TEST(PiezasTest, drop_1_column)
 {
 	Piezas obj;
-	ASSER_TRUE(obj.turn == X);
+	obj.dropPiece(0);
+	ASSERT_TRUE(pieceAt(0,0) == X);
 }
