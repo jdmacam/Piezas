@@ -53,7 +53,7 @@ TEST(PiezasTest, drop_2_in_column)
 	ASSERT_TRUE(obj.pieceAt(1,0) == X);
 }
 
-TEST(PiezasTest, drop_2_in_column)
+TEST(PiezasTest, drop_3_in_column)
 {
 	Piezas obj;
 	obj.dropPiece(0);
