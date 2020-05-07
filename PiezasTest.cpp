@@ -83,3 +83,21 @@ TEST(PiezasTest, drop_alternating_to_full)
 	ASSERT_TRUE(obj.pieceAt(1,1) == O);
 	ASSERT_TRUE(obj.pieceAt(2,1) == O);
 }
+
+TEST(PiezasTest, reset_test)
+{
+	Piezas obj;
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.reset();
+	ASSERT_TRUE(obj.pieceAt(0,0) == Blank);
+	ASSERT_TRUE(obj.pieceAt(1,0) == Blank);
+	ASSERT_TRUE(obj.pieceAt(2,0) == Blank);
+	ASSERT_TRUE(obj.pieceAt(0,1) == Blank);
+	ASSERT_TRUE(obj.pieceAt(1,1) == Blank);
+	ASSERT_TRUE(obj.pieceAt(2,1) == Blank);
+}
