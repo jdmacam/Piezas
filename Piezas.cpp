@@ -204,8 +204,20 @@ Piece Piezas::gameState()
     //determine final tally for X and O
     int x_final;
     int o_final;
-    x_vert > x_hori ? x_final = x_vert : x_final = x_hori;
-    o_vert > o_hori ? o_final = o_vert : o_final = o_hori;
+    //X
+    if(x_vert >= x_hori){
+        x_final = x_vert;
+    }
+    else{
+        x_final = x_hori;
+    }
+    //O
+    if(o_vert >= o_hori){
+        o_final = o_vert;
+    }
+    else{
+        o_final = o_hori;
+    }
 
     Piece winner;
     if(x_final > o_final){
