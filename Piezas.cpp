@@ -113,7 +113,7 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    //check if game is over (any empty spaces)
+    //check if game is not over (any empty spaces)
     for(int i = 0; i < BOARD_COLS; i++){
         if(pieceAt(2,i) == Blank){
             return Invalid;
@@ -217,6 +217,7 @@ Piece Piezas::gameState()
         o_final = o_hori;
     }
 
+    //determine final winner
     Piece winner;
     if(x_final > o_final){
         winner = X;
