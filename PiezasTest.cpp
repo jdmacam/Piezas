@@ -122,3 +122,18 @@ TEST(PiezasTest, out_of_lower_bounds)
 	Piezas obj;
 	ASSERT_TRUE(obj.dropPiece(-1) == Invalid);
 }
+
+TEST(PiezasTest, game_not_over_empty)
+{
+	Piezas obj;
+	ASSERT_TRUE(obj.gameState() == Invalid);
+}
+
+TEST(PiezasTest, game_not_over_1_column_full)
+{
+	Piezas obj;
+	obj.dropPiece(0);
+	obj.dropPiece(0);
+	obj.dropPiece(0);
+	ASSERT_TRUE(obj.gameState() == Invalid);
+}

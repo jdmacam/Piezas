@@ -111,5 +111,10 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+    //check if game is over (any empty spaces)
+    for(int i = 0; i < BOARD_COLS; i++){
+        if(pieceAt(2,i) == Blank){
+            return Invalid;
+        }
+    }
 }
