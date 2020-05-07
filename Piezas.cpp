@@ -66,12 +66,24 @@ Piece Piezas::dropPiece(int column)
     Piece dropped = turn;
     //check if valid column
     if(column >= BOARD_COLS || column < 0){
-      return Invalid;
+        if(turn == X){
+            turn = O;
+        }
+        else{
+            turn = X;
+        }
+        return Invalid;
     }
 
     //check if column is full
     if(pieceAt(2,column) != Blank){ //a piece is at top row
-      return Blank;
+        if(turn == X){
+            turn = O;
+        }
+        else{
+            turn = X;
+        }
+        return Blank;
     }
 
     //find appropriate spot in column, place piece
