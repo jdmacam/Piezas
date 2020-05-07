@@ -66,3 +66,20 @@ TEST(PiezasTest, drop_3_in_column)
 	ASSERT_TRUE(obj.pieceAt(1,0) == X);
 	ASSERT_TRUE(obj.pieceAt(2,0) == X);
 }
+
+TEST(PiezasTest, drop_alternating_to_full)
+{
+	Piezas obj;
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	ASSERT_TRUE(obj.pieceAt(0,0) == X);
+	ASSERT_TRUE(obj.pieceAt(1,0) == X);
+	ASSERT_TRUE(obj.pieceAt(2,0) == X);
+	ASSERT_TRUE(obj.pieceAt(0,1) == O);
+	ASSERT_TRUE(obj.pieceAt(1,1) == O);
+	ASSERT_TRUE(obj.pieceAt(2,1) == O);
+}
