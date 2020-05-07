@@ -77,7 +77,7 @@ Piece Piezas::dropPiece(int column)
     //find appropriate spot in column, place piece
     for(int i = 0; i < BOARD_ROWS; i++){
       if(pieceAt(i,column) == Blank){
-        board[i][column] == turn;
+        board[i][column] = turn;
         break;
       }
     }
