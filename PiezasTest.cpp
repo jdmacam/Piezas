@@ -35,9 +35,20 @@ TEST(PiezasTest, constructor_all_spaces)
   }
 }
 
-TEST(PiezasTest, drop_1_column)
+TEST(PiezasTest, drop_1_in_column)
 {
 	Piezas obj;
 	obj.dropPiece(0);
 	ASSERT_TRUE(obj.pieceAt(0,0) == X);
+}
+
+TEST(PiezasTest, drop_2_in_column)
+{
+	Piezas obj;
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.dropPiece(0);
+	obj.dropPiece(1);
+	ASSERT_TRUE(obj.pieceAt(1,0) == X);
+
 }
