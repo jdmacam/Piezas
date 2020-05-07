@@ -129,4 +129,93 @@ Piece Piezas::gameState()
             return Invalid;
         }
     }
+
+    //largest scores for each coressponding piece and coressponding direction
+    int x_vert = 0;
+    int x_hori = 0;
+    int o_vert = 0;
+    int o_hori = 0;
+    int cur;
+
+    //vertical X tally
+    cur = 0;
+    for(int i = 0; i < BOARD_COLS; i++){
+        for(int j = 0; j < BOARD_ROWS; j++){
+            if(board[i][j] == X){
+                cur++;
+            }
+            else{
+                if(cur > x_vert){
+                    x_vert = cur;
+                    cur = 0;
+                }
+            }
+        }
+    }
+
+    //vertical O tally
+    cur = 0;
+    for(int i = 0; i < BOARD_COLS; i++){
+        for(int j = 0; j < BOARD_ROWS; j++){
+            if(board[i][j] == O){
+                cur++;
+            }
+            else{
+                if(cur > o_vert){
+                    o_vert = cur;
+                    cur = 0;
+                }
+            }
+        }
+    }
+
+    //horizontal X tally
+    cur = 0;
+    for(int i = 0; i < BOARD_ROWS; i++){
+        for(int j = 0; j < BOARD_COLS; j++){
+            if(board[i][j] == X){
+                cur++;
+            }
+            else{
+                if(cur > x_hori){
+                    x_hori = cur;
+                    cur = 0;
+                }
+            }
+        }
+    }
+
+    //horizontal O tally
+    cur = 0;
+    for(int i = 0; i < BOARD_ROWS; i++){
+        for(int j = 0; j < BOARD_COLS; j++){
+            if(board[i][j] == O){
+                cur++;
+            }
+            else{
+                if(cur > o_hori){
+                    o_hori = cur;
+                    cur = 0;
+                }
+            }
+        }
+    }
+
+    //determine final tally for X and O
+    int x_final;
+    int o_final;
+    x_vert > x_hori ? x_final = x_vert : x_final = x_hori;
+    o_vert > o_hori ? o_final = o_vert : o_final = o_hori;
+
+    Piece winner;
+    if(x_final > o_final){
+        winner = X;
+    }
+    else if(o_final > x_final){
+        winner = O;
+    }
+    else{ //tie
+        winner = Blank;
+    }
+    return winner;
 }

@@ -137,3 +137,14 @@ TEST(PiezasTest, game_not_over_1_column_full)
 	obj.dropPiece(0);
 	ASSERT_TRUE(obj.gameState() == Invalid);
 }
+
+TEST(PiezasTest, gamestate_tie)
+{
+	Piezas obj;
+	for(int i = 0; i < BOARD_COLS; i++){
+		obj.dropPiece(i);
+		obj.dropPiece(i);
+		obj.dropPiece(i);
+	}
+	ASSERT_TRUE(obj.gameState() == Blank);
+}
