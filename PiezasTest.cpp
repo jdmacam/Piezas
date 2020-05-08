@@ -50,7 +50,7 @@ TEST(PiezasTest, drop_2_in_column)
 	int i = 0;
 	while(i < 2){
 		ASSERT_TRUE(obj.pieceAt(i,0) != Blank);
-		i++
+		i++;
 	}
 }
 
@@ -63,7 +63,7 @@ TEST(PiezasTest, drop_3_in_column)
 	int i = 0;
 	while(i < 3){
 		ASSERT_TRUE(obj.pieceAt(i,0) != Blank);
-		i++
+		i++;
 	}
 }
 
@@ -197,16 +197,16 @@ TEST(PiezasTest, o_winner_by_3)
 {
 	Piezas obj;
 	obj.dropPiece(0);
+	obj.dropPiece(1);
+	obj.dropPiece(1);
+	obj.dropPiece(2);
+	obj.dropPiece(1);
+	obj.dropPiece(3);
 	obj.dropPiece(0);
-	obj.dropPiece(1);
-	obj.dropPiece(1);
-	obj.dropPiece(2);
-	obj.dropPiece(2);
 	obj.dropPiece(0);
 	obj.dropPiece(3);
-	obj.dropPiece(1);
-	obj.dropPiece(3);
 	obj.dropPiece(2);
 	obj.dropPiece(3);
+	obj.dropPiece(2);
 	ASSERT_TRUE(obj.gameState() == O);
 }
